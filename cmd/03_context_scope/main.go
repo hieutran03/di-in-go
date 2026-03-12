@@ -3,17 +3,18 @@
 // Three middleware layers compose the request scope.  Each layer reads or
 // writes a typed value in context.Context:
 //
-//   requestIDMiddleware → rest.WithRequestID  → rest.RequestIDFromContext
-//   authMiddleware      → domain.WithAuthUser → domain.AuthUserFromContext
-//   txMiddleware        → domain.WithTx       → domain.TxFromContext
+//	requestIDMiddleware → rest.WithRequestID  → rest.RequestIDFromContext
+//	authMiddleware      → domain.WithAuthUser → domain.AuthUserFromContext
+//	txMiddleware        → domain.WithTx       → domain.TxFromContext
 //
 // Services and repositories are Singletons; the values they read from context
 // carry the per-request scope.  The logger is enriched per-call from context.
 //
 // Lifecycle:
-//   Singleton  → all services and repositories
-//   Scoped     → RequestID, AuthUser, Tx (all stored in context)
-//   Transient  → none
+//
+//	Singleton  → all services and repositories
+//	Scoped     → RequestID, AuthUser, Tx (all stored in context)
+//	Transient  → none
 //
 // Run: go run ./cmd/03_context_scope/
 package main

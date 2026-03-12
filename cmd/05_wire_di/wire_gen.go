@@ -25,14 +25,14 @@ import (
 // it as a compile-time error — not a runtime panic.
 func InitApp() *App {
 	// ── Singletons — one allocation each, order determined by Wire ──
-	log := logger.New()                            // ProvideLogger()
-	db := infradb.New()                            // ProvideDB()
-	val := validator.New()                         // ProvideValidator()
-	emailSvc := email.NewStub(log)                 // ProvideEmailService(log)
-	repo := repository.NewMemory(db, log)          // (repo provider)
-	svc := application.NewUserService(             // ProvideUserService(...)
+	log := logger.New()                   // ProvideLogger()
+	db := infradb.New()                   // ProvideDB()
+	val := validator.New()                // ProvideValidator()
+	emailSvc := email.NewStub(log)        // ProvideEmailService(log)
+	repo := repository.NewMemory(db, log) // (repo provider)
+	svc := application.NewUserService(    // ProvideUserService(...)
 		repo, emailSvc, val, log,
 	)
-	h := rest.NewUserHandler(svc, log)             // ProvideUserHandler(svc, log)
-	return NewApp(h)                               // ProvideApp(h)
+	h := rest.NewUserHandler(svc, log) // ProvideUserHandler(svc, log)
+	return NewApp(h)                   // ProvideApp(h)
 }

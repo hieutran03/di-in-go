@@ -7,10 +7,11 @@
 // This is the Go equivalent of @Transactional (Spring) / TransactionScope (.NET).
 //
 // Lifecycle:
-//   Singleton  → DB, Logger, Validator, EmailService, UnitOfWork (factory)
-//   Scoped     → domain.Tx (alive for the WithTransaction callback)
-//                txUserRepo (produced by UoW per callback)
-//   Transient  → none
+//
+//	Singleton  → DB, Logger, Validator, EmailService, UnitOfWork (factory)
+//	Scoped     → domain.Tx (alive for the WithTransaction callback)
+//	             txUserRepo (produced by UoW per callback)
+//	Transient  → none
 //
 // Run: go run ./cmd/04_transaction_scope/
 package main

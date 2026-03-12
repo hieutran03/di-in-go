@@ -5,9 +5,10 @@
 // The handler function itself is the scope boundary.
 //
 // Lifecycle:
-//   Singleton  → DB, Logger, Validator, EmailService (closed over by factories)
-//   Scoped     → RequestID (middleware)
-//   Transient  → UserRepository, UserService (new allocation per request)
+//
+//	Singleton  → DB, Logger, Validator, EmailService (closed over by factories)
+//	Scoped     → RequestID (middleware)
+//	Transient  → UserRepository, UserService (new allocation per request)
 //
 // Run: go run ./cmd/02_function_scope/
 package main

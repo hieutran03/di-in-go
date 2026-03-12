@@ -4,9 +4,10 @@
 // Every dependency is passed via constructor; the caller (main) controls order.
 //
 // Lifecycle:
-//   Singleton  → all services and repositories (created once, shared)
-//   Scoped     → RequestID (generated per request by RequestIDMiddleware)
-//   Transient  → none
+//
+//	Singleton  → all services and repositories (created once, shared)
+//	Scoped     → RequestID (generated per request by RequestIDMiddleware)
+//	Transient  → none
 //
 // Run: go run ./cmd/01_manual/
 package main

@@ -5,9 +5,10 @@
 // OnStart / OnStop hooks model Fx's lifecycle API.
 //
 // Lifecycle:
-//   Singleton  → all registered types (container caches by type after first resolve)
-//   Scoped     → model via a child container per request (not shown here)
-//   Transient  → provider returns func() T; caller invokes the factory
+//
+//	Singleton  → all registered types (container caches by type after first resolve)
+//	Scoped     → model via a child container per request (not shown here)
+//	Transient  → provider returns func() T; caller invokes the factory
 //
 // Run: go run ./cmd/06_runtime_container/
 package main
@@ -22,8 +23,8 @@ import (
 	"github.com/example/di_in_go/internal/adapters/repository"
 	"github.com/example/di_in_go/internal/adapters/rest"
 	"github.com/example/di_in_go/internal/application"
-	infradb "github.com/example/di_in_go/internal/infrastructure/db"
 	"github.com/example/di_in_go/internal/infrastructure/container"
+	infradb "github.com/example/di_in_go/internal/infrastructure/db"
 	"github.com/example/di_in_go/internal/infrastructure/email"
 	"github.com/example/di_in_go/internal/infrastructure/logger"
 	"github.com/example/di_in_go/internal/infrastructure/validator"
@@ -57,13 +58,13 @@ func main() {
 
 	// ── Registration — order independent ──────────────────────────────────────
 	// The container resolves these lazily; you can register in any order.
-	c.Provide(logger.New)       // () → application.Logger
-	c.Provide(infradb.New)      // () → *infradb.MemoryDB
-	c.Provide(validator.New)    // () → application.Validator
-	c.Provide(email.NewStub)    // (application.Logger) → application.EmailService
-	c.Provide(provideUserService) // (...) → application.UserService
+	c.Provide(logger.New)          // () → application.Logger
+	c.Provide(infradb.New)         // () → *infradb.MemoryDB
+	c.Provide(validator.New)       // () → application.Validator
+	c.Provide(email.NewStub)       // (application.Logger) → application.EmailService
+	c.Provide(provideUserService)  // (...) → application.UserService
 	c.Provide(rest.NewUserHandler) // (application.UserService, application.Logger) → *rest.UserHandler
-	c.Provide(newServer)        // (*rest.UserHandler) → *Server
+	c.Provide(newServer)           // (*rest.UserHandler) → *Server
 
 	// ── Lifecycle hooks ───────────────────────────────────────────────────────
 	c.OnStart(func(_ context.Context) error {

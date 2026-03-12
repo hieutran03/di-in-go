@@ -123,9 +123,9 @@ func NewScopeFactory(
 // NewScope builds a fresh RequestScope for one HTTP request.
 // Each call creates new scoped objects enriched with reqID.
 func (f *ScopeFactory) NewScope(reqID string) *RequestScope {
-	scopedLog := f.log.With("request_id", reqID)                         // scoped logger
-	repo := f.newRepo(scopedLog)                                          // scoped repository
-	svc := application.NewUserService(repo, f.email, f.val, scopedLog)   // scoped service
+	scopedLog := f.log.With("request_id", reqID)                       // scoped logger
+	repo := f.newRepo(scopedLog)                                       // scoped repository
+	svc := application.NewUserService(repo, f.email, f.val, scopedLog) // scoped service
 	return &RequestScope{
 		UserService: svc,
 		RequestID:   reqID,

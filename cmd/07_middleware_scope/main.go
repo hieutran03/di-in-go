@@ -9,9 +9,10 @@
 // This is the closest Go analog to AddScoped (ASP.NET) / REQUEST scope (NestJS).
 //
 // Lifecycle:
-//   Singleton  → DB, Logger, Validator, EmailService, ScopeFactory
-//   Scoped     → RequestScope, enriched Logger, UserRepository, UserService
-//   Transient  → none
+//
+//	Singleton  → DB, Logger, Validator, EmailService, ScopeFactory
+//	Scoped     → RequestScope, enriched Logger, UserRepository, UserService
+//	Transient  → none
 //
 // Run: go run ./cmd/07_middleware_scope/
 package main
