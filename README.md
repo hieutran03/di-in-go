@@ -59,13 +59,13 @@ di_in_go/
 
 ```
          ┌──────────────────────────────────────────────┐
-         │            infrastructure/                    │  db, logger, email, validator
+         │            infrastructure/                   │  db, logger, email, validator
          │   ┌──────────────────────────────────────┐   │
-         │   │           adapters/                   │   │  rest handlers, repositories
+         │   │           adapters/                  │   │  rest handlers, repositories
          │   │   ┌──────────────────────────────┐   │   │
-         │   │   │        application/           │   │   │  use cases, ports (interfaces)
+         │   │   │        application/          │   │   │  use cases, ports (interfaces)
          │   │   │   ┌──────────────────────┐   │   │   │
-         │   │   │   │      domain/          │   │   │   │  entities, repository interface
+         │   │   │   │      domain/         │   │   │   │  entities, repository interface
          │   │   │   └──────────────────────┘   │   │   │
          │   │   └──────────────────────────────┘   │   │
          │   └──────────────────────────────────────┘   │
