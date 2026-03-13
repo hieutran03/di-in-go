@@ -10,6 +10,8 @@
 //	Scoped     → model via a child container per request (not shown here)
 //	Transient  → provider returns func() T; caller invokes the factory
 //
+// See README.md for the registration/start/stop flow and when to use.
+//
 // Run: go run ./cmd/06_runtime_container/
 package main
 

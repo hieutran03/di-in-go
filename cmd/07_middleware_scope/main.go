@@ -14,6 +14,8 @@
 //	Scoped     → RequestScope, enriched Logger, UserRepository, UserService
 //	Transient  → none
 //
+// See README.md for per-request flow and when to use.
+//
 // Run: go run ./cmd/07_middleware_scope/
 package main
 

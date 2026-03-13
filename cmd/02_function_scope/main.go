@@ -10,6 +10,8 @@
 //	Scoped     → RequestID (middleware)
 //	Transient  → UserRepository, UserService (new allocation per request)
 //
+// See README.md for flow diagram and when to use.
+//
 // Run: go run ./cmd/02_function_scope/
 package main
 

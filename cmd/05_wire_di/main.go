@@ -3,6 +3,8 @@
 // This file contains the App bootstrapper and the main function.
 // InitApp() lives in wire_gen.go (simulated generated code).
 //
+// See README.md for the Wire workflow, provider graph, and when to use.
+//
 // Run: go run ./cmd/05_wire_di/
 package main
 

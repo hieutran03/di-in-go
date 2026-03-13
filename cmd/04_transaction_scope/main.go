@@ -13,6 +13,8 @@
 //	             txUserRepo (produced by UoW per callback)
 //	Transient  → none
 //
+// See README.md for the Create flow and when to use.
+//
 // Run: go run ./cmd/04_transaction_scope/
 package main
 

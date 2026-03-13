@@ -9,6 +9,8 @@
 //	Scoped     → RequestID (generated per request by RequestIDMiddleware)
 //	Transient  → none
 //
+// See README.md for flow diagram, dependency graph, and when to use.
+//
 // Run: go run ./cmd/01_manual/
 package main
 

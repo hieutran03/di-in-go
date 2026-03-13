@@ -4,6 +4,8 @@
 // signatures, resolves the dependency graph, and emits wire_gen.go with InitApp().
 // No reflection at runtime — the generated code is ordinary Go.
 //
+// See README.md for the full provider graph and Wire workflow.
+//
 // Usage with the real Wire CLI:
 //
 //	go install github.com/google/wire/cmd/wire@latest

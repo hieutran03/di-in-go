@@ -16,6 +16,8 @@
 //	Scoped     → RequestID, AuthUser, Tx (all stored in context)
 //	Transient  → none
 //
+// See README.md for per-request flow and when to use.
+//
 // Run: go run ./cmd/03_context_scope/
 package main
 
